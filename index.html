@@ -11,7 +11,6 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="favicon.png" />
     <title>rrender</title>
-
     <script>hljs.highlightAll();</script>
 </head>
 
@@ -172,16 +171,16 @@ class component_todo extends component {
            <div class="card-body d-flex flex-column align-items-center">
             <ul>
                         <li r-for="todos">
-                            <span r-bind="title"></span>
+                            <span r-bind="title"></span>    
                         </li>
-                </ul>
+                </ul> 
                 <div>
                <span r-bind="counter"></span>
                <button class="btn btn-primary" r-click="increment">+</button>
                     </div>
                </div>
             </div>
-
+         
         `
         };
         increment() {
