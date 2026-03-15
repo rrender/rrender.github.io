@@ -50,6 +50,7 @@ class component_menu extends component {
         });
 
         _store.lvl.subscribe((e) => {
+            this.dirtyCheck();
             if (!this.state.menu) {
                 return
             }
@@ -76,7 +77,7 @@ class component_menu extends component {
             let counter = 0;
             while (queue.length) {
                 let item = queue.shift();
-                let next = (item.childrens.length) ? "➯" : "";
+                let next = (item.childrens.length) ? `<img style="width:10px;" src="arrow.svg"></img>   ` : "";
                 let display = !res.length ? true : res.length <= lvl && !item.parent || kek.map(c => c.title).includes(item.parent) ? true : false;
                 c.push({ ...item, next: next, display })
                 t.push(...item.childrens);
@@ -90,6 +91,7 @@ class component_menu extends component {
             }
             this.state.res = res
             _menu = res;
+            this.dirtyCheck();
             Render.renderDom();
         })
     }
@@ -118,7 +120,6 @@ class component_col extends component {
         _store.cSection.next(id);
     }
     mouse(title) {
-        console.log({ title })
         _store.lvl.next({ title: title, lvl: this.index });
     }
     body() {

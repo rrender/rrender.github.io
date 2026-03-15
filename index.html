@@ -1,19 +1,17 @@
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/ru51a4/rrender/dist/rrender.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ru51a4/minimal_react/dist/mreact.js"></script>
     <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="favicon.png" />
     <title>rrender</title>
-    <script>
-        hljs.highlightAll();
-    </script>
+    <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -23,73 +21,44 @@
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="fs-4">rrender <img style="width: 50px;" src="favicon.jpg"></span>
+                <span class="fs-4">rrender</span>
             </a>
         </header>
+
     </div>
 
     <div class="container d-flex flex-column align-items-center">
         <div class="row d-flex flex-column align-items-center">
-
-            <h2>
-                <a href="https://github.com/ru51a4/minimal_react">rrender</a>
-                - <span class="ttext"></span>
+            <h2><a href="https://github.com/ru51a4/minimal_react">rrender</a> - framework for building user interfaces
             </h2>
-            <br /><span style="text-align: center">https://cdn.jsdelivr.net/gh/ru51a4/rrender/dist/rrender.js</span>
-            <br />
-            <script>
-                let textArray = ["framework for building user interfaces.", "like vue but shit.", 'xml комбайн.'];
-                let textIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-                let element = document.querySelector(".ttext");
+            <br><span style="text-align: center;">https://cdn.jsdelivr.net/gh/ru51a4/rrender/dist/rrender.js</span>
+            <br>
+            <h3 class="d-flex justify-content-center">How it work? &nbsp;<a
+                    href="https://github.com/ru51a4/programming-guide/blob/main/article/rrender.md">read online</a>
+            </h3>
 
-                function typeWriter() {
-                    // Условие для добавления и удаления текста
-                    if (!isDeleting && charIndex < textArray[textIndex].length) {
-                        // Добавление символов
-                        element.textContent += textArray[textIndex].charAt(charIndex);
-                        charIndex++;
-                        setTimeout(typeWriter, 100); // Задержка между символами
-                    } else if (isDeleting && charIndex > 0) {
-                        // Удаление символов
-                        element.textContent = textArray[textIndex].substring(0, charIndex - 1);
-                        charIndex--;
-                        setTimeout(typeWriter, 100);
-                    } else {
-                        // Переключение между словами
-                        isDeleting = !isDeleting;
-                        if (!isDeleting) {
-                            textIndex++;
-                            if (textIndex >= textArray.length) {
-                                textIndex = 0;
-                            }
-                        }
-                        setTimeout(typeWriter, 500); // Задержка между словами
-                    }
-                }
-
-                // Запуск анимации
-                typeWriter();
-
-            </script>
         </div>
-        <div class="mt-5 row d-flex justify-content-center" style="text-align: center">
+        <div class="mt-5 row d-flex justify-content-center" style="text-align: center;">
+
+
+
+
+
             <h2>online demo:</h2>
             <ul class="d-flex flex-column align-items-center">
                 <li>
                     <a href="./demo/todo/">todo app</a>
                 </li>
                 <li>
-                    <a href="http://188.120.245.72:88/demo/iblockcms-frontend/">ajax-catalog</a>
+                    <a href="./demo/iblockcms-frontend/">ajax-catalog</a>
                 </li>
                 <li>
                     <a href="http://188.120.245.72:3000/">chat-app</a>
                 </li>
             </ul>
-            <br />
+            <br>
         </div>
-        <div style="min-width: 100%" class="row align-items-center">
+        <div style="min-width: 100%;" class="row align-items-center">
             <div class="col-6">
                 <pre>
             <code class="language-js">
@@ -123,6 +92,7 @@ class component_todo extends component {
 }
             </code>
         </pre>
+
             </div>
 
             <div class="col-6 main d-flex justify-content-center">
@@ -130,79 +100,76 @@ class component_todo extends component {
             </div>
         </div>
 
-        <div class="row">
+        <div class="row ">
             <div class="d-flex flex-column align-items-center">
                 <h2>fast start:</h2>
-                <!-- HTML generated using hilite.me -->
-                <div style="
-                            background: #ffffff;
-                            overflow: auto;
-                            width: auto;
-                            border: solid gray;
-                            border-width: 0.1em 0.1em 0.1em 0.8em;
-                            padding: 0.2em 0.6em;
-                        ">
-                    <pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;html&gt;</span>
-<span style="color: #007700">&lt;script </span><span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;https://cdn.jsdelivr.net/gh/ru51a4/rrender/dist/rrender.js&quot;</span><span style="color: #007700">&gt;&lt;/script&gt;</span>
+                <pre
+                    style="font-family:monospace;color: rgb(68, 68, 68); background-color: rgb(243, 243, 243); font-weight: 400; ">&lt;html&gt;
+<span style="color: rgb(68, 68, 68); font-weight: 400;"><span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">script</span> <span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">src</span>=<span style="color: rgb(136, 0, 0); font-weight: 400;">"https://cdn.jsdelivr.net/gh/ru51a4/rrender/dist/rrender.js"</span>&gt;</span><span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;/<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">script</span>&gt;</span></span>
 
-<span style="color: #007700">&lt;body&gt;</span>
-    <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;main&quot;</span><span style="color: #007700">&gt;</span>
-        <span style="color: #007700">&lt;hello /&gt;</span>
-    <span style="color: #007700">&lt;/div&gt;</span>
-<span style="color: #007700">&lt;/body&gt;</span>
-<span style="color: #007700">&lt;script&gt;</span>
-    <span style="color: #008800; font-weight: bold">class</span> component_hello <span style="color: #008800; font-weight: bold">extends</span> component {
-        state <span style="color: #333333">=</span> {
-            variable<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;hello&quot;</span>,
-            color<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;red&quot;</span>,
-            cssColor<span style="color: #333333">:</span> () <span style="color: #333333">=&gt;</span> {
-                <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&#39;color:&#39;</span> <span style="color: #333333">+</span> <span style="color: #008800; font-weight: bold">this</span>.state.color <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&#39;;&#39;</span>
-            }
+<span style="color: rgb(68, 68, 68); font-weight: 400;"><span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">body</span>&gt;</span>
+    <span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">div</span> <span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">class</span>=<span style="color: rgb(136, 0, 0); font-weight: 400;">"main"</span>&gt;</span>
+        <span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">hello</span> /&gt;</span>
+    <span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;/<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">div</span>&gt;</span>
+<span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;/<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">body</span>&gt;</span></span>
+<span style="color: rgb(68, 68, 68); font-weight: 400;"><span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">script</span>&gt;</span><span style="color: rgb(68, 68, 68); font-weight: 400;">
+    <span style="color: rgb(68, 68, 68); font-weight: 700;">class</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">component_hello</span> <span style="color: rgb(68, 68, 68); font-weight: 700;">extends</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">component</span> {
+        state = {
+            <span style="color: rgb(68, 68, 68); font-weight: 400;">variable</span>: <span style="color: rgb(136, 0, 0); font-weight: 400;">"hello"</span>,
+            <span style="color: rgb(68, 68, 68); font-weight: 400;">color</span>: <span style="color: rgb(136, 0, 0); font-weight: 400;">"red"</span>,
+            <span style="color: rgb(68, 68, 68); font-weight: 400;">cssColor</span>: <span style="color: rgb(68, 68, 68); font-weight: 400;">() =&gt;</span> {
+                <span style="color: rgb(68, 68, 68); font-weight: 700;">return</span> <span style="color: rgb(136, 0, 0); font-weight: 400;">'color:'</span> + <span style="color: rgb(171, 86, 86); font-weight: 400;">this</span>.<span style="color: rgb(68, 68, 68); font-weight: 400;">state</span>.<span style="color: rgb(68, 68, 68); font-weight: 400;">color</span> + <span style="color: rgb(136, 0, 0); font-weight: 400;">';'</span>
+            },
+            <span style="color: rgb(68, 68, 68); font-weight: 400;">time</span>: <span style="color: rgb(68, 68, 68); font-weight: 700;">new</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">Date</span>().<span style="color: rgb(136, 0, 0); font-weight: 700;">toLocaleTimeString</span>(),
         };
-        body() {
-            <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&#39;&lt;div&gt; &lt;span r-bind=&quot;variable&quot;&gt;&lt;/span&gt; &lt;span r-bind.style=&quot;cssColor&quot;&gt;world&lt;/span&gt;&lt;/div&gt; &#39;</span>;
+        <span style="color: rgb(136, 0, 0); font-weight: 700;">body</span>(<span style="color: rgb(68, 68, 68); font-weight: 400;"></span>) {
+            <span style="color: rgb(68, 68, 68); font-weight: 700;">return</span> <span style="color: rgb(136, 0, 0); font-weight: 400;">`&lt;div&gt;
+                        &lt;span r-bind="variable"&gt;&lt;/span&gt;
+                        &lt;span r-bind.style="cssColor"&gt;world&lt;/span&gt;
+                        &lt;span r-bind="time"&gt;&lt;/span&gt;
+                    &lt;/div&gt;`</span>;
         }
-        init() {
-            console.log(<span style="background-color: #fff0f0">&#39;init&#39;</span>)
+        <span style="color: rgb(136, 0, 0); font-weight: 700;">init</span>(<span style="color: rgb(68, 68, 68); font-weight: 400;"></span>) {
+            <span style="color: rgb(171, 86, 86); font-weight: 400;">this</span>.<span style="color: rgb(68, 68, 68); font-weight: 400;">timer</span> = <span style="color: rgb(57, 115, 0); font-weight: 400;">setInterval</span>(<span style="color: rgb(68, 68, 68); font-weight: 400;">() =&gt;</span> {
+                <span style="color: rgb(171, 86, 86); font-weight: 400;">this</span>.<span style="color: rgb(68, 68, 68); font-weight: 400;">state</span>.<span style="color: rgb(68, 68, 68); font-weight: 400;">time</span> = <span style="color: rgb(68, 68, 68); font-weight: 700;">new</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">Date</span>().<span style="color: rgb(136, 0, 0); font-weight: 700;">toLocaleTimeString</span>();
+                <span style="color: rgb(171, 86, 86); font-weight: 400;">this</span>.<span style="color: rgb(136, 0, 0); font-weight: 700;">dirtyCheck</span>();
+                <span style="color: rgb(136, 0, 0); font-weight: 700;">Render</span>.<span style="color: rgb(136, 0, 0); font-weight: 700;">renderDom</span>();
+            }, <span style="color: rgb(136, 0, 0); font-weight: 400;">1000</span>);
+        }
+        <span style="color: rgb(136, 0, 0); font-weight: 700;">destroy</span>(<span style="color: rgb(68, 68, 68); font-weight: 400;"></span>) {
+            <span style="color: rgb(57, 115, 0); font-weight: 400;">clearInterval</span>(<span style="color: rgb(171, 86, 86); font-weight: 400;">this</span>.<span style="color: rgb(68, 68, 68); font-weight: 400;">timer</span>);
         }
     }
 
-    <span style="color: #008800; font-weight: bold">var</span> components <span style="color: #333333">=</span> [
+    <span style="color: rgb(68, 68, 68); font-weight: 700;">var</span> components = [
         {
-            name<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;hello&#39;</span>,
-            component<span style="color: #333333">:</span> component_hello
+            <span style="color: rgb(68, 68, 68); font-weight: 400;">name</span>: <span style="color: rgb(136, 0, 0); font-weight: 400;">'hello'</span>,
+            <span style="color: rgb(68, 68, 68); font-weight: 400;">component</span>: component_hello
         },
     ];
 
-    var Render <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> render(document.querySelector(".main"), components);
+    <span style="color: rgb(68, 68, 68); font-weight: 700;">var</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">Render</span> = <span style="color: rgb(68, 68, 68); font-weight: 700;">new</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">render</span>(<span style="color: rgb(171, 86, 86); font-weight: 400;">document</span>.<span style="color: rgb(136, 0, 0); font-weight: 700;">querySelector</span>(<span style="color: rgb(136, 0, 0); font-weight: 400;">".main"</span>), components);
 
-    <span style="color: #008800; font-weight: bold">function</span> main() {
-        Render.renderDom();
+    <span style="color: rgb(68, 68, 68); font-weight: 700;">function</span> <span style="color: rgb(136, 0, 0); font-weight: 700;">main</span>(<span style="color: rgb(68, 68, 68); font-weight: 400;"></span>) {
+        <span style="color: rgb(136, 0, 0); font-weight: 700;">Render</span>.<span style="color: rgb(136, 0, 0); font-weight: 700;">renderDom</span>();
     }
-    main();
-<span style="color: #007700">&lt;/script&gt;</span>
+    <span style="color: rgb(136, 0, 0); font-weight: 700;">main</span>();
+</span><span style="color: rgba(68, 68, 68, 0.667); font-weight: 400;">&lt;/<span style="color: rgba(68, 68, 68, 0.667); font-weight: 700;">script</span>&gt;</span></span>
 
-<span style="color: #007700">&lt;/html&gt;</span>
-</pre>
-                </div>
+&lt;/html&gt;</pre>
             </div>
         </div>
-        <footer style="width: 100%; justify-content: space-around; margin-bottom: 10px;"
-            class="mt-5 pt-3 d-flex text-muted border-top">
-            <span>ru51a4 ©️ 2020 - 2025</span>
-
-            <span> disigned by <a href="https://vk.com/umarekawari">umarekawari</a></span>
-        </footer>
     </div>
+
 </body>
 <script>
     class component_todo extends component {
         state = {
             counter: 0,
             todos: [
-                { title: "wash the dishes" },
-                { title: "cook lunch" },
-                { title: "cook dinner" },
+                { title: 'wash the dishes' },
+                { title: 'cook lunch' },
+                { title: 'cook dinner' }
             ],
         };
 
@@ -213,27 +180,28 @@ class component_todo extends component {
            <div class="card-body d-flex flex-column align-items-center">
             <ul>
                         <li r-for="todos">
-                            <span r-bind="title"></span>
+                            <span r-bind="title"></span>    
                         </li>
-                </ul>
+                </ul> 
                 <div>
                <span r-bind="counter"></span>
                <button class="btn btn-primary" r-click="increment">+</button>
                     </div>
                </div>
             </div>
-
-        `;
-        }
+         
+        `
+        };
         increment() {
             this.state.counter++;
             Render.renderDom();
+
         }
     }
     var components = [
         {
-            name: "todo",
-            component: component_todo,
+            name: 'todo',
+            component: component_todo
         },
     ];
 
@@ -243,6 +211,7 @@ class component_todo extends component {
         Render.renderDom();
         Render.renderDom();
         Render.renderDom();
+
     }
 
     main();
